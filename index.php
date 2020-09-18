@@ -13,20 +13,23 @@ error_reporting(E_ALL);
         <meta name="author" content="Arden University">
     </head>
     <body>
-        <h1>Shops</h1>
+        <h1>Shop</h1>
 
         <div>
-            <h2>Opening timessss</h2>
+            <h2>Opening times</h2>
 
             <?php
-            include 'BaseController.php';
-            include 'Model.php';
-            include 'View.php';
-            include 'ShopController.php';
-            include 'OpeningTimesModel.php';
-            include 'OpeningTimesView.php';
+            use Arden\ShopController;
+            include './BaseController.php';
+            include './Model.php';
+            include './View.php';
+            include './ShopController.php';
+            include './OpeningTimesModel.php';
+            include './OpeningTimesView.php';
+            include './TopProductsModel.php';
+            include './TopProducts.php';
 
-           
+            $controller = new ShopController();
 
             $openingTimesView = new Arden\OpeningTimesView($controller->getModelData());
 
@@ -34,7 +37,12 @@ error_reporting(E_ALL);
             ?>
         <div>
             <h2>Top Products</h2>
-            <p>( Coming Soon )</p>
+            <?php 
+
+            $top = new Arden\TopProducts($controller->getModelDataTopProducts());
+            
+            echo $top->render();
+            ?>
         </div>
     </body>
 </html>

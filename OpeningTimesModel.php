@@ -1,7 +1,6 @@
 <?php
 
-namespace Arden;
-use Model;
+use Arden\Model as Model;
 
 class OpeningTimesModel extends Model
 {
@@ -13,6 +12,7 @@ class OpeningTimesModel extends Model
                 'Mon' => '0900 - 1700',
                 'Tue' => '0900 - 1400',
                 'Wed' => 'Closed',
+                'Thu' => '',
                 'Fri' => '1000 - 1300'
             ]
         ];
